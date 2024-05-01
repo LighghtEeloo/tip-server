@@ -1,4 +1,4 @@
-#+title: tip-server -- jsonrpc server for [[https://github.com/elioazuray/typst-inline-preview][typst-inline-preview.el]]
+#+title: tip-server
 
 Jsonrpc server for [[https://github.com/elioazuray/typst-inline-preview][GitHub - elioazuray/typst-inline-preview: inline-preview for typst in emacs]].
 
