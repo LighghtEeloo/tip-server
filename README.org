@@ -2,10 +2,28 @@
 
 Jsonrpc server for [[https://github.com/elioazuray/typst-inline-preview][GitHub - elioazuray/typst-inline-preview: inline-preview for typst in emacs]].
 
+* Installation
+
+#+begin_src sh
+git clone https://github.com/elioazuray/tip-server somewhere
+cd somewhere
+python -m venv .
+bin/pip install -r requirements.txt
+#+end_src
+
+Then =bin/python main.py= sets up the server to listen on =localhost:5000= (please adjust this to suit your setup).
+
 * Dependencies
 
 - [[https://github.com/messense/typst-py][GitHub - messense/typst-py: Python binding to typst]]
 - [[https://github.com/explodinglabs/jsonrpcserver][GitHub - explodinglabs/jsonrpcserver: Process incoming JSON-RPC requests in Python]]
+
+* FAQ
+** Why not use cli?
+Typst truly shines with its rapid /incremental/ compilation, where after the initialization, the =tip-server= typically takes a mere ~1ms to process each fragment (on my laptop with i5-1240p).  However, even compiling a basic =foo.typ= file via the command =typst compile -f svg foo.typ= can exceed 1s.
+
+** Why Python bindings instead of [[https://github.com/tfachmann/typst-as-library][using typst as rust library]]?
+Regrettably, Rust isn't in my skill set yet.
 
 * License
 
