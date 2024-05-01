@@ -1,0 +1,7 @@
+#+title: tip-server -- jsonrpc server for [[https://github.com/elioazuray/typst-inline-preview][typst-inline-preview.el]]
+
+Jsonrpc server for [[https://github.com/elioazuray/typst-inline-preview][GitHub - elioazuray/typst-inline-preview: inline-preview for typst in emacs]].
+
+* Dependencies
+
+- [[https://github.com/messense/typst-py][GitHub - messense/typst-py: Python binding to typst]]
