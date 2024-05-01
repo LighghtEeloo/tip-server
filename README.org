@@ -5,6 +5,7 @@ Jsonrpc server for [[https://github.com/elioazuray/typst-inline-preview][GitHub 
 * Dependencies
 
 - [[https://github.com/messense/typst-py][GitHub - messense/typst-py: Python binding to typst]]
+- [[https://github.com/explodinglabs/jsonrpcserver][GitHub - explodinglabs/jsonrpcserver: Process incoming JSON-RPC requests in Python]]
 
 * License
 
