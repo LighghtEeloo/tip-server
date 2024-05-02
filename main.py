@@ -11,7 +11,6 @@ default_preamble = ""
 
 # TODO: allow customization here
 default_extra = '#set page(width: auto, height: auto)\n#set page(margin: (x: 0cm, y: 0.2cm))\n'
-blocked_extra = '#set page(width: 16cm, height: auto)\n#set page(margin: (x: 0cm, y: 0.2cm))\n'
 
 @method
 def set_default_preamble(preamble):
@@ -21,7 +20,7 @@ def set_default_preamble(preamble):
 
 
 @method
-def compile_typst_document_batch(color, preamble, batch):
+def compile_typst_document_batch(color, width, preamble, batch):
     """
     color: foreground color of math
     preamble: preamble
@@ -38,6 +37,7 @@ def compile_typst_document_batch(color, preamble, batch):
         # Update the content of the .typ file
         if re.match(r'\$\s', content):
             print(f"got blocked content {content}")
+            blocked_extra = f'#set page(width: {width}cm, height: auto)\n#set page(margin: (x: 0cm, y: 0.2cm))\n'
             extra += blocked_extra
         else:
             print(f"got content {content}")
@@ -64,7 +64,7 @@ def compile_typst_document_batch(color, preamble, batch):
 
 
 @method
-def compile_fragment_live(color, preamble, content, hashval):
+def compile_fragment_live(color, width, preamble, content, hashval):
     """
     color: foreground color of math
     preamble: preamble
@@ -78,6 +78,7 @@ def compile_fragment_live(color, preamble, content, hashval):
     # Update the content of the .typ file
     if re.match(r'\$\s', content):
         print(f"got blocked content {content}")
+        blocked_extra = f'#set page(width: {width}cm, height: auto)\n#set page(margin: (x: 0cm, y: 0.2cm))\n'
         extra += blocked_extra
     else:
         print(f"got content {content}")
